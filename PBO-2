@@ -1,0 +1,28 @@
+class Mobil {
+    constructor(merk, warna) {
+        this.merk = merk;
+        this.warna = warna;
+    }
+
+    jalan() {
+        console.log(`${this.merk} berwarna ${this.warna} sedang berjalan.`);
+    }
+}
+
+class MobilBalap extends Mobil {
+    constructor(merk, warna, kecepatanMaksimal) {
+        super(merk, warna); // Memanggil konstruktor kelas induk
+        this.kecepatanMaksimal = kecepatanMaksimal;
+    }
+
+    // Overriding Metode
+    jalan() {
+        console.log(`${this.merk} balap berwarna ${this.warna} berjalan dengan kecepatan maksimal ${this.kecepatanMaksimal} km/jam.`);
+    }
+}
+
+const mobil1 = new Mobil('Honda', 'biru');
+mobil1.jalan(); // Output: Honda berwarna biru sedang berjalan.
+
+const mobilBalap1 = new MobilBalap('Corvette', 'hitam', 300);
+mobilBalap1.jalan(); // Output: Corvette balap berwarna hitam berjalan dengan kecepatan maksimal 310 km/jam.
